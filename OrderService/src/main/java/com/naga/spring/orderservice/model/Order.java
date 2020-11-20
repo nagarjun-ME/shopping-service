@@ -1,4 +1,4 @@
-opppackage com.naga.spring.orderservice.model;
+package com.naga.spring.orderservice.model;
 
 public class Order {
 
