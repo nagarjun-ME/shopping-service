@@ -10,13 +10,13 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long productId;
 
-    @Column
+    @Column(name ="productName")
     private String productName;
 
-    @Column
+    @Column(name = "productDescription")
     private String productDescription;
 
-    @Column
+    @Column(name = "productPrice")
     private double productPrice;
 
     public Product( ){
