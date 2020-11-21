@@ -5,11 +5,10 @@ import com.naga.spring.dbservice.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import javax.persistence.*;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @RequestMapping("/db/products/")
 public class ProductRestController {
 
-    private Logger log= LoggerFactory.getLogger(this.getClass());
+    private final  Logger log= LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ProductService productService;
@@ -30,10 +29,27 @@ public class ProductRestController {
     }
 
     @RequestMapping(value="/{pId}", method = RequestMethod.GET)
-    public ResponseEntity<Product> getProductbyId(@PathVariable("pId") long id)
+    public ResponseEntity<Product> getProductById(@PathVariable("pId") long id)
     {
         log.info(" Finding product with id :" + id);
         return ResponseEntity.ok().body(productService.getProductById(id));
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity < Product > createProduct(@RequestBody Product product) {
+        return ResponseEntity.ok().body(this.productService.createProduct(product));
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity < Product > updateProduct(@PathVariable long id, @RequestBody Product product) {
+        product.setProductId(id);
+        return ResponseEntity.ok().body(this.productService.updateProduct(product));
+    }
+
+    @DeleteMapping("/rmv/{id}")
+    public HttpStatus deleteProduct(@PathVariable long id) {
+        this.productService.deleteProduct(id);
+        return HttpStatus.OK;
     }
 
 }

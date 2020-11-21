@@ -7,7 +7,10 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    //@SequenceGenerator(name = "sequenceGenerator")
     private long productId;
 
     @Column(name ="productName")
@@ -23,7 +26,7 @@ public class Product {
 
     }
 
-    public Product(long productId, String productName, String productDescription, double productPrice) {
+    public Product(String productName, String productDescription, double productPrice) {
         this.productId = productId;
         this.productName = productName;
         this.productDescription = productDescription;

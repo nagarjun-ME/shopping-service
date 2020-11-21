@@ -22,6 +22,33 @@ public class ProductServiceImpl implements ProductService{
     private ProductRepository productRepository;
 
     @Override
+    public Product createProduct(Product product) {
+        log.info("Saved the product in data base" + product);
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        Optional <Product> prod=this.productRepository.findById(product.getProductId());
+
+        if (prod.isPresent())
+        {
+            Product updatedProduct=prod.get();
+            updatedProduct.setProductId(product.getProductId());
+            updatedProduct.setProductName(product.getProductName());
+            updatedProduct.setProductDescription(product.getProductDescription());
+            updatedProduct.setProductPrice(product.getProductPrice());
+            productRepository.save(updatedProduct);
+            return updatedProduct;
+
+        } else {
+            throw new ProductNotFoundException("The resource is not available");
+        }
+
+
+    }
+
+    @Override
     public List<Product> getAllProduct() {
 
         log.info("Getting all product data");
@@ -32,7 +59,7 @@ public class ProductServiceImpl implements ProductService{
     public Product getProductById(long productId) {
 
         log.info("Getting the product data with Product id : " + productId);
-       Optional <Product> product=this.productRepository.findById((int)productId);
+       Optional <Product> product=this.productRepository.findById(productId);
        if(product.isPresent()){
            return product.get();
        } else  {
@@ -41,5 +68,17 @@ public class ProductServiceImpl implements ProductService{
            throw new ProductNotFoundException("Product with ID : "+ productId +" not found. ");
        }
 
+    }
+
+    @Override
+    public void deleteProduct(long id) {
+
+        Optional < Product > productDb = this.productRepository.findById(id);
+
+        if (productDb.isPresent()) {
+            this.productRepository.delete(productDb.get());
+        } else {
+            throw new ProductNotFoundException("Record not found with id : " + id);
+        }
     }
 }
