@@ -1,8 +1,14 @@
-There are five Microservices 
+﻿Micro-Service Communication
+
+There are five Micro-Services :
+
+
 	1. DB Service : 
 		CRUD operations are implemented to make calls to H2 DB 
+
 	2. Order Service : To place an order 
 		This service calls the Item service to place an order
+
 	3. Item Service : used to catalog items
 		a. Makes REST API call to DB service to pull product information
 		b. It serves Order service through Rest Calls
@@ -11,13 +17,13 @@ There are five Microservices
 		a. It handles service discovery 
 		b. Acts as a service manager
 		
-APIs  covered:
+API’s  Covered:
 	Spring Boot
 	Spring Cloud
 	Eureka Service Manager
 	Lombok
 	H2 JDBC Connectivity
-	Microservice Communication
+	Micro-service Communication
 	Service Discovery and Management
 	Docker Container
 	Netflix Eureka Client
