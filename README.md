@@ -1,5 +1,4 @@
 ﻿# Micro-Service Communication
-====================================================
 
 
 
@@ -22,7 +21,7 @@ There are five Micro-Services :
 		
 ---------------------------------------------------------------------------------
 
-API’s  Covered:
+## API’s  Covered:
 
     • Spring Boot
     • Spring Cloud
