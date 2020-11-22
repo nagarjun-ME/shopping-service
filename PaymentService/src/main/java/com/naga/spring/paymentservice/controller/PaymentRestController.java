@@ -29,7 +29,8 @@ public class PaymentRestController {
     @GetMapping("/{pId}")
     public ResponseEntity<Payment> getItemList(@PathVariable("pId") long pId)
     {
-        //RestTemplate restTemplate=new RestTemplate();
+        //Down*
+        // RestTemplate restTemplate=new RestTemplate();
         log.info("Payment details id  " + pId+ " retrieving");
 
         return ResponseEntity.ok().body(new Payment(1, "Test Items", 4.44, new Date(), "Test001" ));
