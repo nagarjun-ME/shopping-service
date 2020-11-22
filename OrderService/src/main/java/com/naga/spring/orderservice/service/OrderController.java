@@ -49,7 +49,7 @@ public class OrderController {
 
         ResponseEntity <List<Item>> productResponse=webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8200/naga/shop/item/all")
+                .uri("http://item-catalog-service/naga/shop/item/all")
                 .retrieve()
                 .toEntityList(Item.class)
                 .block();
