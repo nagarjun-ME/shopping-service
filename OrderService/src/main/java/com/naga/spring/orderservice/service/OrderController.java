@@ -17,7 +17,7 @@ import java.util.Date;
 
 
 @RestController
-@RequestMapping("/shop/order/")
+@RequestMapping("/naga/shop/order/")
 public class OrderController {
     private final Logger log= LoggerFactory.getLogger(this.getClass());
 
@@ -28,12 +28,15 @@ public class OrderController {
         return "Welcome to Order  catalog";
     }
 
+    @GetMapping("/all")
     public ResponseEntity <Order> getAllOrders()
     {
-        RestTemplate restTemplate=new RestTemplate();
+
         log.info("Retrieving all Item details");
 
-        ResponseEntity <Item[] > productResponse=restTemplate.getForEntity("http://localhost:8400/db/products/all", Item[].class);
+        ResponseEntity <Item[] > productResponse=restTemplate.getForEntity("http://localhost:8200/naga/shop/item/all", Item[].class);
+
+        log.info("Retrieving all Items completed.");
 
         String dt=new Date().toString();
         return ResponseEntity.ok().body(new Order("001ABC", "Recieved",dt, Arrays.asList(productResponse.getBody().clone()), "TestUser001"));

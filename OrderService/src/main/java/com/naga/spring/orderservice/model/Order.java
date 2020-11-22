@@ -10,7 +10,6 @@ import java.util.List;
 
 @Data
 @Slf4j
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Order{
@@ -23,4 +22,11 @@ public class Order{
     private String customerId;
 
 
+    public Order(String orderId, String orderStatus, String orderDate, List<Item> itemList, String customerId) {
+        this.orderId = orderId;
+        this.orderStatus = orderStatus;
+        this.orderDate = orderDate;
+        this.itemList = itemList;
+        this.customerId = customerId;
+    }
 }
