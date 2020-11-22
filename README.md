@@ -1,0 +1,23 @@
+There are five Microservices 
+	1. DB Service : 
+		CRUD operations are implemented to make calls to H2 DB 
+	2. Order Service : To place an order 
+		This service calls the Item service to place an order
+	3. Item Service : used to catalog items
+		a. Makes REST API call to DB service to pull product information
+		b. It serves Order service through Rest Calls
+	4. Payment service : to store pay,emt details
+	5. Neflix Eureka Service Manager
+		a. It handles service discovery 
+		b. Acts as a service manager
+		
+APIs  covered:
+	Spring Boot
+	Spring Cloud
+	Eureka Service Manager
+	Lombok
+	H2 JDBC Connectivity
+	Microservice Communication
+	Service Discovery and Management
+	Docker Container
+	Netflix Eureka Client
