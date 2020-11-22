@@ -17,13 +17,16 @@ There are five Micro-Services :
 		a. It handles service discovery 
 		b. Acts as a service manager
 		
+---------------------------------------------------------------------------------
+
 API’s  Covered:
-	Spring Boot
-	Spring Cloud
-	Eureka Service Manager
-	Lombok
-	H2 JDBC Connectivity
-	Micro-service Communication
-	Service Discovery and Management
-	Docker Container
-	Netflix Eureka Client
+
+    • Spring Boot
+    • Spring Cloud
+    • Eureka Service Manager
+    • Lombok
+    • H2 JDBC Connectivity
+    • Micro-service Communication
+    • Service Discovery and Management
+    • Docker Container
+    • Netflix Eureka Client
