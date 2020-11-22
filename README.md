@@ -1,5 +1,7 @@
 ﻿Micro-Service Communication
 
+
+
 There are five Micro-Services :
 
 
@@ -30,3 +32,30 @@ API’s  Covered:
     • Service Discovery and Management
     • Docker Container
     • Netflix Eureka Client
+
+
+
+==================================================================================
+
+
+You can find more on Spring boot + Docker
+		******************************
+
+Micro-service and Containerization using Docker
+
+https://github.com/nagarjun-ME/DockerGitSprinBootServiceApplication.git
+
+You can find the Docker image at
+
+https://hub.docker.com/repository/docker/nagarjunmqdev/springdocker-gitapp-v1
+
+
+
+JMS using Middleware technologies like IBM MQ V9.2
+
+https://github.com/nagarjun-ME/jms-springboot
+
+Docker Image at
+
+https://hub.docker.com/repository/docker/nagarjunmqdev/ibmmqtest
+
