@@ -40,7 +40,7 @@ public class PaymentRestController {
     @RequestMapping("/all")
     public ResponseEntity <Payment>  getAllItems()
     {
-        RestTemplate restTemplate=new RestTemplate();
+
         log.info("Retrieving all payments details");
 
         //ResponseEntity <Payment[] > productResponse=restTemplate.getForEntity("http://localhost:8400/db/products/all", Payment[].class);
