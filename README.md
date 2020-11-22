@@ -1,21 +1,21 @@
-﻿# Micro-Service Communication
+﻿# MicroService Communication
 
 
 
 There are five Micro-Services :
 
 
-	1. DB Service : 
+#####	1. DB Service : 
 		CRUD operations are implemented to make calls to H2 DB 
 
-	2. Order Service : To place an order 
+#####	2. Order Service : To place an order 
 		This service calls the Item service to place an order
 
-	3. Item Service : used to catalog items
+#####	3. Item Service : used to catalog items
 		a. Makes REST API call to DB service to pull product information
 		b. It serves Order service through Rest Calls
-	4. Payment service : to store pay,emt details
-	5. Neflix Eureka Service Manager
+#####	4. Payment service : to store payment details
+#####	5. Netflix Eureka Service Manager
 		a. It handles service discovery 
 		b. Acts as a service manager
 		
