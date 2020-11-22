@@ -1,4 +1,5 @@
-﻿Micro-Service Communication
+﻿Alt - Micro-Service Communication
+====================================================
 
 
 
@@ -35,27 +36,21 @@ API’s  Covered:
 
 
 
-==================================================================================
+-----------------------------------------------------------------------------------
 
 
-You can find more on Spring boot + Docker
-		******************************
+##You can find more on Spring boot + Docker
 
-Micro-service and Containerization using Docker
 
-https://github.com/nagarjun-ME/DockerGitSprinBootServiceApplication.git
+[Micro-service and Containerization using Docker] (https://github.com/nagarjun-ME/DockerGitSprinBootServiceApplication.git)
 
-You can find the Docker image at
-
-https://hub.docker.com/repository/docker/nagarjunmqdev/springdocker-gitapp-v1
+[You can find the Docker image here] (https://hub.docker.com/repository/docker/nagarjunmqdev/springdocker-gitapp-v1)
 
 
 
-JMS using Middleware technologies like IBM MQ V9.2
+### [JMS using Middleware technologies like IBM MQ V9.2]
 
-https://github.com/nagarjun-ME/jms-springboot
+(https://github.com/nagarjun-ME/jms-springboot)
 
-Docker Image at
-
-https://hub.docker.com/repository/docker/nagarjunmqdev/ibmmqtest
+[Docker Image here] (https://hub.docker.com/repository/docker/nagarjunmqdev/ibmmqtest)
 
