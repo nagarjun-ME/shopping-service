@@ -1,20 +1,42 @@
 package com.naga.spring.orderservice.service;
 
+
+
+import com.naga.spring.orderservice.model.Item;
+import com.naga.spring.orderservice.model.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.Date;
+
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/shop/order/")
 public class OrderController {
-    private Logger log= LoggerFactory.getLogger(this.getClass());
+    private final Logger log= LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/")
     public String sayHello()
     {
-        log.info("Inside say Order hello");
+        log.info("Test message");
         return "Welcome to Order  catalog";
+    }
+
+    public ResponseEntity <Order> getAllOrders()
+    {
+        RestTemplate restTemplate=new RestTemplate();
+        log.info("Retrieving all Item details");
+
+        ResponseEntity <Item[] > productResponse=restTemplate.getForEntity("http://localhost:8400/db/products/all", Item[].class);
+
+        String dt=new Date().toString();
+        return ResponseEntity.ok().body(new Order("001ABC", "Recieved",dt, Arrays.asList(productResponse.getBody().clone()), "TestUser001"));
+
     }
 }

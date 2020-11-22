@@ -1,51 +1,26 @@
 package com.naga.spring.orderservice.model;
 
-public class Order {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.List;
+
+@Data
+@Slf4j
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Order{
 
     private String orderId;
-    private int quantity;
-    private String orderInfo;
+    private String orderStatus;
+    private String orderDate ;
+    //private String itemId;
+    private List <Item> itemList;
+    private String customerId;
 
-    public Order() {
 
-    }
-
-    public Order(String orderId, int quantity, String orderInfo) {
-        this.orderId = orderId;
-        this.quantity = quantity;
-        this.orderInfo = orderInfo;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", quantity=" + quantity +
-                ", orderInfo='" + orderInfo + '\'' +
-                '}';
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getOrderInfo() {
-        return orderInfo;
-    }
-
-    public void setOrderInfo(String orderInfo) {
-        this.orderInfo = orderInfo;
-    }
 }

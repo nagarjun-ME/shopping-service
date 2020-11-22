@@ -16,7 +16,7 @@ import java.util.Optional;
 @Transactional
 public class ProductServiceImpl implements ProductService{
 
-    private Logger log= LoggerFactory.getLogger(this.getClass());
+    private final Logger log= LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ProductRepository productRepository;
